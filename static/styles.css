@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #27445D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack content vertically */
+    height: 100%; /* Full viewport height */
+    margin: 0;
+    overflow: scroll; /* Prevent any overflow */
+    position: relative; /* To keep the background image behind */
+    animation: backgroundColorAnimation 10s ease-in-out infinite; /* Background color animation */
+    background-image: url('path_to_your_image.jpg'); /* Your image path here */
+    background-size: cover; /* Ensure it covers the entire screen */
+    background-position: center center; /* Keep it centered */
+    background-attachment: fixed; /* Keeps the background in place when scrolling */
+    background-repeat: no-repeat; /* Don't repeat the background image */
+}
+
+@keyframes backgroundColorAnimation {
+    0% {
+        background-color: rgba(73, 125, 116, 0.8); /* Initial color */
+    }
+    50% {
+        background-color: rgba(243, 243, 243, 0.8); /* Midway color */
+    }
+    100% {
+        background-color: rgba(73, 125, 116, 0.8); /* Final color */
+    }
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #497D74;
+    animation: slideIn 1s ease-out;
+    letter-spacing: 2px;
+    z-index: 2; /* Make sure the text is above the background */
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency to show some background contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 400px;
+    animation: fadeIn 1.5s ease-in-out;
+    position: relative; /* Keeps the form within the viewport */
+    z-index: 1; /* Make sure the form is above the background */
+}
+
+.label-box {
+    background-color: #F3F3F3;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #497D74;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    color: #497D74;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #497D74;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #497D74;
+    background-color: #F3F3F3;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus,
+textarea:focus {
+    border-color: #71BBB2;
+    outline: none;
+    background-color: #FFFFFF;
+}
+
+input[type="submit"] {
+    background-color: #497D74;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #35526c;
+}
+
+textarea {
+    height: 120px;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+    background-color: #FFFFFF;
+    border-color: #71BBB2;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+    }
+}
